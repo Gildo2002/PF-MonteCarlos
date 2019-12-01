@@ -1,1 +1,23 @@
-"# PF-MonteCarlos" 
+ # PF-MonteCarlos.
+ 
+ Programación de los Ejemplos del Capítulo de Montecarlo.
+ 
+ ## Metodos.
+ 
+1.	Descompostura de una máquina. 
+2.	Inventario.
+3.	Función de efectividad.
+4.	Cálculo del área bajo una curva.
+5.	Cálculo de pi por el método de aguja de buffon
+6.	El tambaleo del borracho.
+7.	Estrategias de servicios.
+8.	Generando una variable aleatoria exponencial. 
+9.	Calculando pi con gotas de lluvia.
+10. Aun por elegir.
+
+## Entregables.
+
+1.	Capítulo 7 mejorado en Word. Cada ejemplo muy bien explicado paso a paso e incluir el código fuente.
+2.	Presentación en PowerPoint que explique cada ejemplo de una forma muy detallada.
+3.	App funcionando y que se pueda montar en otros celulares
+
