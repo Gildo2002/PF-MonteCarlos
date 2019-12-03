@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RandomWalkActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Parámetros"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Inicio ( 0, 0 )."
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <EditText
+            android:id="@+id/et_steps"
+            android:layout_width="400dp"
+            android:layout_height="60dp"
+            android:ems="10"
+            android:hint="Cantidad de Pasos"
+            android:layout_gravity="center_horizontal"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/et_time"
+            android:layout_width="400dp"
+            android:layout_height="60dp"
+            android:ems="10"
+            android:hint="Duracion de la animacion"
+            android:layout_gravity="center_horizontal"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/btn_accept"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Simular"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:id="@+id/tv_Result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="Resultados:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="24sp"
+            android:visibility="visible"
+            app:autoSizeTextType="uniform" />
+
+        <TextView
+            android:id="@+id/tv_Answer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textSize="20sp"
+            android:visibility="visible" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:visibility="visible" />
+
+        <com.robinhood.spark.SparkView
+            android:id="@+id/spark_view"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
