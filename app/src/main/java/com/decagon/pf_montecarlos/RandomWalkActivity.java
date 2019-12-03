@@ -2,10 +2,12 @@ package com.decagon.pf_montecarlos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.widget.TextView;
@@ -15,7 +17,10 @@ import com.decagon.pf_montecarlos.ClassModels.RandomWalk;
 import com.decagon.pf_montecarlos.ClassModels.Step;
 import com.robinhood.spark.*;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class RandomWalkActivity extends AppCompatActivity {
 
@@ -51,10 +56,14 @@ public class RandomWalkActivity extends AppCompatActivity {
                                 && SimpleValidator.validate(SimpleValidator.NOT_EMPTY,
                                         ((EditText) findViewById(R.id.et_time)).getText().toString());
 
-                        if (trust) {
+                        if (trust)
                             calculateRandomWalk();
-                        } else
+                        else
                             Toast.makeText(mContext, "Error en los datos", Toast.LENGTH_SHORT).show();
+
+                        InputMethodManager imm = (InputMethodManager)getSystemService(mContext.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -67,54 +76,61 @@ public class RandomWalkActivity extends AppCompatActivity {
 
     private void calculateRandomWalk() {
 
+        final int maxRangeAleatory = 4;
+        final int minRangeAleatory = 2;
+
         Integer steps = Integer.parseInt(((EditText) findViewById(R.id.et_steps)).getText().toString());
 
         new AsyncTask<Integer, String, RandomWalk>() {
-        @Override
-        protected RandomWalk doInBackground(Integer... steps) {
-            int iterations = steps[0];
+            @Override
+            protected RandomWalk doInBackground(Integer... steps) {
+                int iterations = steps[0];
+                Random random = new Random();
+                RandomWalk randomWalk = new RandomWalk(iterations);
 
-            RandomWalk randomWalk = new RandomWalk(iterations);
+                try {
+                    // Montecarlo
+                    for (int i = 0; i < iterations; i++) {
+                        int dx = random.nextInt(maxRangeAleatory) - minRangeAleatory;
+                        int dy = random.nextInt(maxRangeAleatory) - minRangeAleatory;
 
-            try {
-                //Montecarlo
-                for (int i = 0; i < iterations; i++) {
-                    double dx = 1 - 2 * Math.random();
-                    double dy = 1 - 2 * Math.random();
+                        if (dx != 0) dy = 0;
 
-                    float x = (float) (randomWalk.xArray[i] + dx);
-                    float y = (float) (randomWalk.yArray[i] + dy);
 
-                    randomWalk.xArray[i + 1] = x;
-                    randomWalk.yArray[i + 1] = y;
+                        System.out.println(dx + "," + dy);
+
+                        int x =  (randomWalk.xArray[i] + dx);
+                        int y =  (randomWalk.yArray[i] + dy);
+
+                        randomWalk.xArray[i + 1] = x;
+                        randomWalk.yArray[i + 1] = y;
+                    }
+
+                    return randomWalk;
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    return null;
                 }
-
-                return randomWalk;
-            } catch (Exception e) {
-                e.printStackTrace();
-                return null;
             }
-        }
 
-        @Override
-        protected void onPostExecute(RandomWalk randomWalk) {
-            super.onPostExecute(randomWalk);
+            @Override
+            protected void onPostExecute(RandomWalk randomWalk) {
+                super.onPostExecute(randomWalk);
 
-            if (randomWalk == null) {
-                Toast.makeText(mContext, "Ha ocurrido un error", Toast.LENGTH_SHORT).show();
-            } else {
-                findViewById(R.id.tv_Result).setVisibility(View.VISIBLE);
-
-//                    showGraph(randomWalk);
-
-                showResults(randomWalk);
+                if (randomWalk == null) {
+                    Toast.makeText(mContext, "Ha ocurrido un error", Toast.LENGTH_SHORT).show();
+                } else {
+                    findViewById(R.id.tv_Result).setVisibility(View.VISIBLE);
+                    findViewById(R.id.tv_Displacement).setVisibility(View.INVISIBLE);
+                    showResults(randomWalk);
+                }
             }
-        }
-    }.execute(steps);
-}
+        }.execute(steps);
+    }
 
     private void showResults(RandomWalk randomWalk) {
-        if (mTimer != null) mTimer.cancel();
+        if (mTimer != null)
+            mTimer.cancel();
 
         mRandomWalk = randomWalk;
         stepCounter = 0;
@@ -136,7 +152,7 @@ public class RandomWalkActivity extends AppCompatActivity {
         mSparkView.setAdapter(mSparkAdapter);
 
         int duration = Integer.parseInt(((EditText) findViewById(R.id.et_time)).getText().toString());
-        duration *= 1000; //convert to milliseconds
+        duration *= 1000; // convert to milliseconds
         startAnimation(duration);
     }
 
@@ -148,7 +164,7 @@ public class RandomWalkActivity extends AppCompatActivity {
         mTimer = new CountDownTimer(dummyTime, countdown) {
 
             public void onTick(long millis) {
-                //OBTIENE LOS VALORES ALEATORIOS
+                // OBTIENE LOS VALORES ALEATORIOS
                 nextStep(stepCounter);
 
                 stepCounter++;
@@ -157,22 +173,34 @@ public class RandomWalkActivity extends AppCompatActivity {
                     String coordinates = "(" + mRandomWalk.xArray[mRandomWalk.xArray.length - 1] + ", "
                             + mRandomWalk.yArray[mRandomWalk.yArray.length - 1] + ")";
                     ((TextView) findViewById(R.id.tv_Answer)).setText(coordinates);
-
+                    calculateDisplacement();
                     mTimer.cancel();
                 }
             }
 
             public void onFinish() {
-
             }
         };
 
         mTimer.start();
     }
 
+    private void calculateDisplacement() {
+
+        DecimalFormat formato = new DecimalFormat("#.000000");
+        findViewById(R.id.tv_Displacement).setVisibility(View.VISIBLE);
+
+        double x = Math.pow(mRandomWalk.xArray[mRandomWalk.xArray.length -1],2);
+        double y = Math.pow(mRandomWalk.yArray[mRandomWalk.yArray.length -1],2);
+
+        String displacement = "Desplazamiento: (" + formato.format(Math.sqrt(x+y)) + ").";
+        ((TextView) findViewById(R.id.tv_Displacement)).setText(displacement);
+    }
+
     private void nextStep(int index) {
         if (index < mRandomWalk.xArray.length) {
             Step step = new Step();
+
             step.x = mRandomWalk.xArray[index];
             step.y = mRandomWalk.yArray[index];
 
@@ -180,37 +208,37 @@ public class RandomWalkActivity extends AppCompatActivity {
         }
     }
 
-public class CustomSparkAdapter extends SparkAdapter {
-    private ArrayList<Step> mDataset;
+    public class CustomSparkAdapter extends SparkAdapter {
+        private ArrayList<Step> mDataset;
 
-    public CustomSparkAdapter(ArrayList<Step> dataset) {
-        mDataset = dataset;
-    }
+        public CustomSparkAdapter(ArrayList<Step> dataset) {
+            mDataset = dataset;
+        }
 
-    public void addValue(Step step) {
-        mDataset.add(step);
-        notifyDataSetChanged();
-    }
+        public void addValue(Step step) {
+            mDataset.add(step);
+            notifyDataSetChanged();
+        }
 
-    @Override
-    public int getCount() {
-        return mDataset.size();
-    }
+        @Override
+        public int getCount() {
+            return mDataset.size();
+        }
 
-    @Override
-    public Object getItem(int index) {
-        return mDataset.get(index);
-    }
+        @Override
+        public Object getItem(int index) {
+            return mDataset.get(index);
+        }
 
-    @Override
-    public float getY(int index) {
-        return mDataset.get(index).y;
-    }
+        @Override
+        public float getY(int index) {
+            return mDataset.get(index).y;
+        }
 
-    @Override
-    public float getX(int index) {
-        return mDataset.get(index).x;
+        @Override
+        public float getX(int index) {
+            return mDataset.get(index).x;
+        }
     }
-}
 
 }
