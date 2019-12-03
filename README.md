@@ -7,8 +7,8 @@
 1.	Descompostura de una máquina. 
 2.	Inventario.
 3.	Función de efectividad.
-4.	Cálculo del área bajo una curva. :x: :graph:
-5.	Cálculo de pi por el método de aguja de buffon :x: :graph:
+4.	Cálculo del área bajo una curva. :x: :chart_with_upwards_trend:
+5.	Cálculo de pi por el método de aguja de buffon :x: :chart_with_upwards_trend:
 6. El tambaleo del borracho. :heavy_check_mark:
 7.	Estrategias de servicios.
 8.	Generando una variable aleatoria exponencial. 
