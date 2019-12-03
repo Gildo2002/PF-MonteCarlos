@@ -8,7 +8,7 @@
 2.	Inventario.
 3.	Función de efectividad.
 4.	Cálculo del área bajo una curva.
-5.	Cálculo de pi por el método de aguja de buffon
+5.	Cálculo de pi por el método de aguja de buffon :x:
 6. El tambaleo del borracho. :x:
 7.	Estrategias de servicios.
 8.	Generando una variable aleatoria exponencial. 
