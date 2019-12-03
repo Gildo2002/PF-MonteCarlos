@@ -9,7 +9,7 @@
 3.	Función de efectividad.
 4.	Cálculo del área bajo una curva.
 5.	Cálculo de pi por el método de aguja de buffon
-6.	El tambaleo del borracho.
+6. El tambaleo del borracho. :x:
 7.	Estrategias de servicios.
 8.	Generando una variable aleatoria exponencial. 
 9.	Calculando pi con gotas de lluvia.
