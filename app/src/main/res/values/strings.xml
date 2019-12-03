@@ -7,7 +7,9 @@
 
     //titles
     <string name="title_RandomWalk">Tambaleo Del Borracho.</string>
-    <string name="title_BuffonNeedles">Agujas de Buffon</string>
+    <string name="title_BuffonNeedles">Agujas De Buffon</string>
+    <string name="title_AreaDownCurve">Area Bajo La Curva</string>
+
     //Others
 
 </resources>

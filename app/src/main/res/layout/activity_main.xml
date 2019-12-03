@@ -29,6 +29,7 @@
                 android:text="@string/title_RandomWalk"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@color/white" />
+
             <Button
                 android:id="@+id/btn_buffon_needles"
                 style="@style/Widget.AppCompat.Button.Colored"
@@ -39,6 +40,19 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="50dp"
                 android:text="@string/title_BuffonNeedles"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btn_area_down_curve"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="50dp"
+                android:text="@string/title_AreaDownCurve"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@color/white" />
 
