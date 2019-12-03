@@ -1,14 +1,13 @@
 <resources>
-    
+
     <string name="app_name">PF-MonteCarlos</string>
-    
+
     //Buttons
     <string name="btn_null">---</string>
-    <string name="btn_randomWalk">El tambaleo del borracho.</string>
 
     //titles
     <string name="title_RandomWalk">Tambaleo Del Borracho.</string>
-    
+    <string name="title_BuffonNeedles">Agujas de Buffon</string>
     //Others
 
 </resources>

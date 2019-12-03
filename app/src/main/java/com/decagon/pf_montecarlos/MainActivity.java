@@ -31,10 +31,15 @@ public class MainActivity extends AppCompatActivity {
                         intent = new Intent(mContext, RandomWalkActivity.class);
                         startActivity(intent);
                         break;
+                    case R.id.btn_buffon_needles:
+                        intent = new Intent(mContext, BuffonNeedlesActivity.class);
+                        startActivity(intent);
+                        break;
                 }
             }
         };
         findViewById(R.id.btn_random_walk).setOnClickListener(listener);
+        findViewById(R.id.btn_buffon_needles).setOnClickListener(listener);
     }
 
 }
