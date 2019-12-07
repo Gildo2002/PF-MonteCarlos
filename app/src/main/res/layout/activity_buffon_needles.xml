@@ -35,6 +35,17 @@
             android:textIsSelectable="false" />
 
         <EditText
+            android:id="@+id/et_spaceNeedles"
+            android:layout_width="400dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:ems="10"
+            android:hint="Espacio entre agujas (cm) "
+            android:inputType="number"
+            android:singleLine="false"
+            android:textIsSelectable="false" />
+
+        <EditText
             android:id="@+id/et_quantityNeedles"
             android:layout_width="400dp"
             android:layout_height="60dp"

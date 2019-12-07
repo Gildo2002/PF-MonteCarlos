@@ -32,13 +32,19 @@ public class BuffonNeedlesActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 String size = ((EditText) findViewById(R.id.et_sizeNeedles)).getText().toString();
-
+                String space = ((EditText) findViewById(R.id.et_spaceNeedles)).getText().toString();
+                String quantity = ((EditText) findViewById(R.id.et_quantityNeedles)).getText().toString();
                 switch (v.getId()){
                     case(R.id.btn_accept):
                         try {
-                            boolean trust = SimpleValidator.validate(SimpleValidator.NOT_EMPTY, size)
+                            boolean trust =  (SimpleValidator.validate(SimpleValidator.NOT_EMPTY,
+                                    space)
                                     && SimpleValidator.validate(SimpleValidator.NOT_EMPTY,
-                                    ((EditText) findViewById(R.id.et_quantityNeedles)).getText().toString());
+                                    size)
+                                    && SimpleValidator.validate(SimpleValidator.NOT_EMPTY,
+                                    quantity)
+                                    && Integer.parseInt(space) > Integer.parseInt(size));
+
                             if(trust)
                                 calculatePiEstimation();
                             else
@@ -58,6 +64,8 @@ public class BuffonNeedlesActivity extends AppCompatActivity {
 
     private void calculatePiEstimation() {
 
+        // space between two lines
+        int space = Integer.parseInt(((EditText) findViewById(R.id.et_spaceNeedles)).getText().toString());
         // size of the needle
         int size = Integer.parseInt(((EditText) findViewById(R.id.et_sizeNeedles)).getText().toString());
         // total amount of needles thrown
@@ -66,7 +74,7 @@ public class BuffonNeedlesActivity extends AppCompatActivity {
         BuffonsNeedle buffonsNeedle = new BuffonsNeedle();
         buffonsNeedle.size = size;
         buffonsNeedle.qty = needlesQty;
-        buffonsNeedle.space = size;
+        buffonsNeedle.space = space;
 
         new AsyncTask<BuffonsNeedle, String, BuffonsNeedle>() {
             @Override
