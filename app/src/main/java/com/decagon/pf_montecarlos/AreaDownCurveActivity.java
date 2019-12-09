@@ -15,9 +15,9 @@ import com.decagon.pf_montecarlos.ClassModels.AreaCurve;
 import com.decagon.pf_montecarlos.ClassHelper.SimpleValidator;
 import org.mariuszgromada.math.mxparser.*;
 
-public class AreaDownCurve extends AppCompatActivity {
+public class AreaDownCurveActivity extends AppCompatActivity {
 
-    private AreaDownCurve mContext = this;
+    private AreaDownCurveActivity mContext = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

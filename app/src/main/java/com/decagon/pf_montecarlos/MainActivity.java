@@ -33,7 +33,11 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case R.id.btn_area_down_curve:
-                        intent = new Intent(mContext, AreaDownCurve.class);
+                        intent = new Intent(mContext, AreaDownCurveActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.btn_number_exp_random:
+                        intent = new Intent(mContext, NumberExpRandomActivity.class);
                         startActivity(intent);
                         break;
                 }
@@ -42,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_random_walk).setOnClickListener(listener);
         findViewById(R.id.btn_buffon_needles).setOnClickListener(listener);
         findViewById(R.id.btn_area_down_curve).setOnClickListener(listener);
+        findViewById(R.id.btn_number_exp_random).setOnClickListener(listener);
     }
 
 }
