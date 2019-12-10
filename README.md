@@ -23,7 +23,7 @@
 
 ## Errores.
 
-Descompostura de una máquina. 
+### Descompostura de una máquina. 
 - 
  
 Inventario.
