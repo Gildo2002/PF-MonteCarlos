@@ -21,28 +21,28 @@
 2.	Presentación en PowerPoint que explique cada ejemplo de una forma muy detallada.
 3.	App funcionando y que se pueda montar en otros celulares
 
-## `Errores.`
+## Errores.
 
--	Descompostura de una máquina. 
- - valores.
+Descompostura de una máquina. 
+- 
  
--	Inventario.
+Inventario.
 
--	Función de efectividad.
+Función de efectividad.
 
--	Cálculo del área bajo una curva. 
+Cálculo del área bajo una curva. 
 
--	Cálculo de pi por el método de aguja de buffon.
+Cálculo de pi por el método de aguja de buffon.
 
--	El tambaleo del borracho. 
+El tambaleo del borracho. 
 
--	Estrategias de servicios.
+Estrategias de servicios.
 
--	Generando una variable aleatoria exponencial. 
+Generando una variable aleatoria exponencial. 
 
--	Calculando pi con gotas de lluvia.
+Calculando pi con gotas de lluvia.
 
--	Aun por elegir.
+Aun por elegir.
 
 - valores negativos en area bajo la curva.
 - resultados NAN en area bajo la curva.
