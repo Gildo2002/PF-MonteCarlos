@@ -23,5 +23,17 @@
 
 <s> Errores. </s>
 
+•	Descompostura de una máquina. 
+ - valores.
+•	Inventario.
+•	Función de efectividad.
+•	Cálculo del área bajo una curva. 
+•	Cálculo de pi por el método de aguja de buffon.
+•	El tambaleo del borracho. 
+•	Estrategias de servicios.
+•	Generando una variable aleatoria exponencial. 
+•	Calculando pi con gotas de lluvia.
+•	Aun por elegir.
+
 - valores negativos en area bajo la curva.
 - resultados NAN en area bajo la curva.
