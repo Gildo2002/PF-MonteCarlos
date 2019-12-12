@@ -24,7 +24,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="50dp"
                 android:layout_gravity="center_horizontal"
-                android:hint="Texto de Entrada" />
+                android:hint="Valor de lambda" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
