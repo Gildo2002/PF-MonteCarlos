@@ -10,6 +10,10 @@
     <string name="title_BuffonNeedles">Agujas De Buffon</string>
     <string name="title_AreaDownCurve">Area Bajo La Curva</string>
     <string name="title_NumberExpRandom">Numero Exp. Aleatorio</string>
+    <string name="title_BreakdownMachine">Descompostura De Una Maquina</string>
+    <string name="title_Invetory">Inventario</string>
+    <string name="title_Function_Effectiviness">Funcion De Efectividad</string>
+    <string name="title_Queue">Estrategia de Servicios</string>
 
     <string name="text_button">button</string>
 

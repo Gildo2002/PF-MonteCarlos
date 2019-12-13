@@ -76,8 +76,7 @@ public class RandomWalkActivity extends AppCompatActivity {
 
     private void calculateRandomWalk() {
 
-        final int maxRangeAleatory = 4;
-        final int minRangeAleatory = 2;
+        final int maxRangeAleatory = 100;
 
         Integer steps = Integer.parseInt(((EditText) findViewById(R.id.et_steps)).getText().toString());
 
@@ -91,13 +90,18 @@ public class RandomWalkActivity extends AppCompatActivity {
                 try {
                     // Montecarlo
                     for (int i = 0; i < iterations; i++) {
-                        int dx = random.nextInt(maxRangeAleatory) - minRangeAleatory;
-                        int dy = random.nextInt(maxRangeAleatory) - minRangeAleatory;
 
-                        if (dx != 0) dy = 0;
+                        int dx = 0;
+                        int dy = 0;
 
+                        int r = random.nextInt(maxRangeAleatory);
 
-                        System.out.println(dx + "," + dy);
+                        if(r >= 00 && r <25) dy =   1;
+                        if(r >= 25 && r <50) dy =  -1;
+                        if(r >= 50 && r <75) dx =   1;
+                        if(r >= 75 && r <100) dx = -1;
+
+                        System.out.println(dx + "," + dy + "," + r);
 
                         int x =  (randomWalk.xArray[i] + dx);
                         int y =  (randomWalk.yArray[i] + dy);

@@ -19,50 +19,90 @@
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
             android:text="Parámetros"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
-        <EditText
-            android:id="@+id/et_sizeNeedles"
-            android:layout_width="400dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center_horizontal"
-            android:ems="10"
-            android:hint="Tamaños de las agujas (cm) "
-            android:imeOptions="actionNext"
-            android:inputType="number"
-            android:textIsSelectable="false" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/et_spaceNeedles"
-            android:layout_width="400dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center_horizontal"
-            android:ems="10"
-            android:hint="Espacio entre agujas (cm) "
-            android:inputType="number"
-            android:singleLine="false"
-            android:textIsSelectable="false" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_sizeNeedles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center_horizontal"
+                android:ems="10"
+                android:hint="Tamaños de las agujas (cm) "
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:textIsSelectable="false" />
 
-        <EditText
-            android:id="@+id/et_quantityNeedles"
-            android:layout_width="400dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center_horizontal"
-            android:ems="10"
-            android:hint="Cantidad de agujas"
-            android:inputType="number"
-            android:singleLine="false"
-            android:textIsSelectable="false" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_spaceNeedles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center_horizontal"
+                android:ems="10"
+                android:hint="Espacio entre agujas (cm) "
+                android:inputType="number"
+                android:singleLine="false"
+                android:textIsSelectable="false" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_quantityNeedles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center_horizontal"
+                android:ems="10"
+                android:hint="Cantidad de agujas"
+                android:inputType="number"
+                android:singleLine="false"
+                android:textIsSelectable="false" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_accept"
-            android:layout_width="100dp"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="125dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
             android:layout_gravity="center_horizontal"
             android:text="Simular"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/white" />
 
         <TextView
             android:id="@+id/tv_Result"

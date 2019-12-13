@@ -115,6 +115,7 @@ public class BuffonNeedlesActivity extends AppCompatActivity {
                 findViewById(R.id.tv_Result).setVisibility(View.VISIBLE);
                 ((TextView) findViewById(R.id.tv_intersections)).setText( buffonsNeedle.intersections + " intersecciones.");
                 ((TextView) findViewById(R.id.tv_piEstimation)).setText("Estimacion de pi: " + String.valueOf(buffonsNeedle.piEstimate));
+
             }
         }.execute(buffonsNeedle);
 

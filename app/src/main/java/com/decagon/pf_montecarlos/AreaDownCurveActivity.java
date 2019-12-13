@@ -30,6 +30,7 @@ public class AreaDownCurveActivity extends AppCompatActivity {
 
     private void setOnClickListeners() {
         View.OnClickListener listener = new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 switch (v.getId()){
@@ -63,7 +64,7 @@ public class AreaDownCurveActivity extends AppCompatActivity {
 
     private void calculateArea() {
 
-        String function = ((EditText) findViewById(R.id.et_function)).getText().toString();
+        String function = ((EditText) findViewById(R.id.et_function)).getText().toString().toLowerCase();
         double xmin = Double.parseDouble(((EditText) findViewById(R.id.et_xmin)).getText().toString());
         double xmax = Double.parseDouble(((EditText) findViewById(R.id.et_xmax)).getText().toString());
         int iterations = Integer.parseInt(((EditText) findViewById(R.id.et_iterations)).getText().toString());

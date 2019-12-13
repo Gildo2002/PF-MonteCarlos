@@ -40,6 +40,22 @@ public class MainActivity extends AppCompatActivity {
                         intent = new Intent(mContext, NumberExpRandomActivity.class);
                         startActivity(intent);
                         break;
+                    case R.id.btn_breakdown_machine:
+                        intent = new Intent(mContext,null);
+                        startActivity(intent);
+                        break;
+                    case R.id.btn_inventory:
+                        intent = new Intent(mContext,null);
+                        startActivity(intent);
+                        break;
+                    case R.id.btn_queue:
+                        intent = new Intent(mContext,null);
+                        startActivity(intent);
+                        break;
+                    case R.id.function_effectiviness:
+                        intent = new Intent(mContext,null);
+                        startActivity(intent);
+                        break;
                 }
             }
         };
