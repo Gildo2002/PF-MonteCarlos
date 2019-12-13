@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.anychart.APIlib;
 import com.anychart.AnyChart;
 import com.anychart.AnyChartView;
 import com.anychart.chart.common.dataentry.DataEntry;
@@ -38,9 +39,9 @@ public class tabs2 extends Fragment {
 
     private Context context;
     private Button button;
-    private TextView textView;
     private EditText editText01;
     private EditText editText02;
+    private EditText editText03;
     private View view;
     private AnyChartView anyChartView;
 
@@ -64,10 +65,9 @@ public class tabs2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tabs2, container, false);
+        view = inflater.inflate(R.layout.fragment_tabs2, container, false);
 
-        button = (Button) view.findViewById(R.id.btn_show);
-        textView = (TextView) view.findViewById(R.id.tv_tabs2_show);
+        button = (Button) view.findViewById(R.id.btn_tabs2_show);
         editText01 = (EditText) view.findViewById(R.id.et_tabs2_v01);
         editText02 = (EditText) view.findViewById(R.id.et_tabs2_v02);
 
@@ -84,8 +84,8 @@ public class tabs2 extends Fragment {
                             value_a)
                             && Double.valueOf(value_a) > 0 &&
                             SimpleValidator.validate(SimpleValidator.NOT_EMPTY,
-                            value_a) &&
-                            Double.valueOf(value_a) > 0);
+                            value_b) &&
+                            Double.valueOf(value_b) > 0);
 
                     if(trust){
                         calculateNumExp(Double.valueOf(value_a),Double.valueOf(value_b));
@@ -106,13 +106,17 @@ public class tabs2 extends Fragment {
 
     private void calculateNumExp(Double value_a, Double value_b){
 
-        anyChartView = view.findViewById(R.id.any_chart_view);
-        anyChartView.setProgressBar(view.findViewById(R.id.progress_bar));
+        anyChartView = view.findViewById(R.id.any_chart_view_tabs2);
+        APIlib.getInstance().setActiveAnyChartView(anyChartView);
+        anyChartView.setProgressBar(view.findViewById(R.id.progress_bar_tabs2));
+
+        List<Double> number = new ArrayList<>();
 
         for(int i=0;i<100;i++) {
             double result = ExpRandom.generadorDistribucionUniformeAB(value_a,value_b);
             number.add(result);
         }
+
         Collections.sort(number,Collections.<Double>reverseOrder());
 
         List<DataEntry> data = new ArrayList<>();
@@ -121,8 +125,6 @@ public class tabs2 extends Fragment {
         for(Double result : number) {
             data.add(new ValueDataEntry(String.valueOf(result),result));
         }
-
-        System.out.println(number);
 
         Cartesian cartesian = AnyChart.column();
         Column column = cartesian.column(data);

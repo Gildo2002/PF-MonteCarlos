@@ -29,7 +29,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_show"
+            android:id="@+id/btn_tabs1_show"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -41,14 +41,8 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@color/white"/>
 
-        <TextView
-            android:id = "@+id/tv_tabs1_show"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
-
         <com.anychart.AnyChartView
-            android:id="@+id/any_chart_view"
+            android:id="@+id/any_chart_view_tabs1"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_marginLeft="20dp"
@@ -56,7 +50,7 @@
             android:layout_marginRight="20dp" />
 
         <ProgressBar
-            android:id="@+id/progress_bar"
+            android:id="@+id/progress_bar_tabs1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

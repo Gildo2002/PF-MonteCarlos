@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.anychart.APIlib;
 import com.anychart.AnyChart;
 import com.anychart.AnyChartView;
 import com.anychart.chart.common.dataentry.DataEntry;
@@ -36,7 +37,6 @@ public class tabs1 extends Fragment{
 
     private Context context;
     private Button button;
-    private TextView textView;
     private EditText editText;
     private View view;
     private AnyChartView anyChartView;
@@ -62,8 +62,7 @@ public class tabs1 extends Fragment{
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_tabs1, container, false);
 
-        button = (Button) view.findViewById(R.id.btn_show);
-        textView = (TextView) view.findViewById(R.id.tv_tabs1_show);
+        button = (Button) view.findViewById(R.id.btn_tabs1_show);
         editText = (EditText) view.findViewById(R.id.et_tabs1_v01);
 
         context = container.getContext();
@@ -95,8 +94,9 @@ public class tabs1 extends Fragment{
 
     private void calculateNumExp(Double value) {
 
-        anyChartView = view.findViewById(R.id.any_chart_view);
-        anyChartView.setProgressBar(view.findViewById(R.id.progress_bar));
+        anyChartView = view.findViewById(R.id.any_chart_view_tabs1);
+        APIlib.getInstance().setActiveAnyChartView(anyChartView);
+        anyChartView.setProgressBar(view.findViewById(R.id.progress_bar_tabs1));
 
         List<Double> number = new ArrayList<>();
 
@@ -104,7 +104,7 @@ public class tabs1 extends Fragment{
             double result = ExpRandom.generadorDistribucionExponencial(Double.valueOf(value));
             number.add(result);
         }
-        Collections.sort(number,Collections.<Double>reverseOrder());
+        Collections.sort(number);
 
         List<DataEntry> data = new ArrayList<>();
         data.clear();
@@ -112,8 +112,6 @@ public class tabs1 extends Fragment{
         for(Double result : number) {
             data.add(new ValueDataEntry(String.valueOf(result),result));
         }
-
-        System.out.println(number);
 
         Cartesian cartesian = AnyChart.column();
         Column column = cartesian.column(data);

@@ -1,11 +1,12 @@
 package com.decagon.pf_montecarlos.ClassModels;
 import java.security.SecureRandom;
+import java.util.Random;
 
 public class ExpRandom {
 
     private static SecureRandom secureRandom = new SecureRandom();
 
-    private ExpRandom(){
+    private ExpRandom() {
     }
 
     /**
@@ -15,11 +16,11 @@ public class ExpRandom {
      * @param lambda Parámetro de la distribución exponencial.
      * @return valor para la variable aleatoria con dist. exponencial
      */
-    public static Double generadorDistribucionExponencial(double lambda){
+    public static Double generadorDistribucionExponencial(double lambda) {
 
         double random = secureRandom.nextDouble();
 
-        double exponencial = ((Math.log(random)/lambda) * (-1));
+        double exponencial = ((Math.log(random) / lambda) * (-1));
 
         return exponencial;
     }
@@ -32,53 +33,16 @@ public class ExpRandom {
      * @param a parámetro a de la distribución uniforme.
      * @param b parámetro b de la distribución uniforme.
      * @return valor para la variable aleatoria con dist. uniforme.
-     *
+     * <p>
      * Caso especial: Uniforme(0:1)
      */
-    public static Double generadorDistribucionUniformeAB(double a, double b){
+    public static Double generadorDistribucionUniformeAB(double a, double b) {
 
         double random = secureRandom.nextDouble();
 
         double uniformeAB = a + ((b - a) * random);
 
         return uniformeAB;
-    }
-
-    /**
-     * Método de rechazo implementado para generar valores de una variable aleatoria
-     * con distribución triangular.
-     *
-     * @param a Parámetro a de la variable aleatoria con distribución triangular
-     * @param b Parámetro b de la variable aleatoria con distribución triangular
-     * @param c Parámetro c de la variable aleatoria con distribución triangular
-     * @return valor para la variable aleatoria con distribución triangular
-     */
-    public static Double generadorDistribucionTriangularMetodoRechazo(double a, double b, double c){
-
-        boolean returnToTop = true;
-        double random1 = secureRandom.nextDouble();
-        double random2 = secureRandom.nextDouble();
-        double maximo = 2/(c-a);
-        double fDeX = 0.0;
-        double x = 0.0;
-
-        do{
-            x = a + ((c-a) * random1);
-
-            if(x < b){
-                fDeX = 2*random1 / (b-a);
-            }else{
-                fDeX= 2 * (1-random1)/(c-b);
-            }
-
-            if(random2 < (fDeX/maximo)){
-                returnToTop=false;
-            }
-
-        }while(returnToTop);
-
-
-        return x;
     }
 
     /**
@@ -91,7 +55,7 @@ public class ExpRandom {
      * @param c Parámetro c de la variable aleatoria con distribución triangular
      * @return valor para la variable aleatoria con distribución triangular
      */
-    public static Double generadorDistribucionTriangular(double a, double b, double c){
+    public static Double generadorDistribucionTriangular(double a, double b, double c) {
 
         double random = secureRandom.nextDouble();
         double x;
@@ -119,12 +83,17 @@ public class ExpRandom {
      * @param lambda Parámetro Lambda de la distribución Poisson.
      * @return valor de la variable aleatoria con distribución Poisson.
      */
-    public static Double generadorDistribucionPoisson(double lambda){
+    public static Double generadorDistribucionPoisson(double lambda) {
 
-        double random = secureRandom.nextDouble();
+        double L = Math.exp(-lambda);
+        double k = 0;
+        double p = 1.0;
 
-        double x = Math.log(1/random) / lambda;
+        do {
+            k++;
+            p = p * secureRandom.nextDouble();
+        } while (p > L);
 
-        return x;
+        return (k - 1);
     }
 }
