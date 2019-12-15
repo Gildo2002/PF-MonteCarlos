@@ -8,8 +8,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,71 +19,110 @@
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:text="Parámetros"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
-        <EditText
-            android:id="@+id/et_function"
-            android:layout_width="400dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center_horizontal"
-            android:ems="10"
-            android:hint="Formula"
-            android:imeOptions="actionNext"
-            android:inputType="none"
-            android:textIsSelectable="false" />
-
-        <EditText
-            android:id="@+id/et_xmin"
-            android:layout_width="400dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center_horizontal"
-            android:ems="10"
-            android:hint="valor minimo"
-            android:imeOptions="actionNext"
-            android:inputType="numberSigned|number"
-            android:textIsSelectable="false" />
-
-        <EditText
-            android:id="@+id/et_xmax"
-            android:layout_width="400dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center_horizontal"
-            android:ems="10"
-            android:hint="valor maximo"
-            android:imeOptions="actionNext"
-            android:inputType="numberSigned|number"
-            android:textIsSelectable="false" />
-
-        <EditText
-            android:id="@+id/et_iterations"
-            android:layout_width="400dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center_horizontal"
-            android:ems="10"
-            android:hint="iteracciones"
-            android:imeOptions="actionNext"
-            android:inputType="number"
-            android:textIsSelectable="false" />
-
-        <androidx.appcompat.widget.AppCompatEditText
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:hint="Formula" />
+            android:layout_height="wrap_content">
 
-        <Button
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_function"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center_horizontal"
+                android:ems="10"
+                android:hint="Formula"
+                android:imeOptions="actionNext"
+                android:inputType="none"
+                android:textIsSelectable="false" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_xmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center_horizontal"
+                android:ems="10"
+                android:hint="valor minimo"
+                android:imeOptions="actionNext"
+                android:inputType="numberSigned|number"
+                android:textIsSelectable="false" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_xmax"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center_horizontal"
+                android:ems="10"
+                android:hint="valor maximo"
+                android:imeOptions="actionNext"
+                android:inputType="numberSigned|number"
+                android:textIsSelectable="false" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_iterations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center_horizontal"
+                android:ems="10"
+                android:hint="iteracciones"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:textIsSelectable="false" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_accept"
-            android:layout_width="100dp"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="125dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
             android:layout_gravity="center_horizontal"
-            android:text="Simular"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/white"
+            android:text="Simular"/>
 
         <TextView
             android:id="@+id/tv_Result"
-            android:layout_width="400dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_gravity="center_horizontal"
             android:text="Resultados:"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -93,8 +132,10 @@
 
         <TextView
             android:id="@+id/tv_Answer"
-            android:layout_width="400dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_gravity="center_horizontal"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textSize="20sp"

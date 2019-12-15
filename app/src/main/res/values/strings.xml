@@ -25,6 +25,10 @@
     <string name="tab_text_3">Metodo 3</string>
     <string name="tab_text_4">Metodo 4</string>
 
-    //Others
+    //Date
+
+    <string name="breakdown_01">Esta tabla tiene un conjuto de números al azar que se usaron para escoger los tiempos de descompostura y tiempos de reparación en proporción a las probabilidades de ocurrencia de las distribuciones originales.</string>
+    <string name="breakdown_02">La simulación trata una cola, que serían las máquinas descompuesta y un servidor, que sería el mecánico. El mecánico puede reparar una maquina a la vez. Las maquinas se descompone cada cierto tiempo y este tiempo es estocásticos. Si cuando se daña una maquina y el mecánico está ocupado, la maquina pasara a cola. Mientras el mecánico no se encuentre reparando ninguna máquina, se mantendrá en estado ocioso y en espera de otro cliente.</string>
+
 
 </resources>

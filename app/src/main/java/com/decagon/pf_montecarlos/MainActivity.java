@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case R.id.btn_breakdown_machine:
-                        intent = new Intent(mContext,null);
+                        intent = new Intent(mContext, BreakMachineActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.btn_inventory:
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                         intent = new Intent(mContext,null);
                         startActivity(intent);
                         break;
-                    case R.id.function_effectiviness:
+                    case R.id.btn_function_effectiviness:
                         intent = new Intent(mContext,null);
                         startActivity(intent);
                         break;
@@ -63,6 +63,10 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_buffon_needles).setOnClickListener(listener);
         findViewById(R.id.btn_area_down_curve).setOnClickListener(listener);
         findViewById(R.id.btn_number_exp_random).setOnClickListener(listener);
+        findViewById(R.id.btn_breakdown_machine).setOnClickListener(listener);
+        findViewById(R.id.btn_inventory).setOnClickListener(listener);
+        findViewById(R.id.btn_function_effectiviness).setOnClickListener(listener);
+        findViewById(R.id.btn_queue).setOnClickListener(listener);
     }
 
 }

@@ -44,7 +44,7 @@
                 android:textColor="@color/white" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/function_effectiviness"
+                android:id="@+id/btn_function_effectiviness"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

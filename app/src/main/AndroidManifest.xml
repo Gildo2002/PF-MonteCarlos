@@ -11,10 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".BreakMachineActivity"></activity>
         <activity
             android:name=".NumberExpRandomActivity"
             android:label="@string/title_activity_number_exp_random"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme" />
         <activity android:name=".AreaDownCurveActivity" />
         <activity android:name=".BuffonNeedlesActivity" />
         <activity android:name=".RandomWalkActivity" />
