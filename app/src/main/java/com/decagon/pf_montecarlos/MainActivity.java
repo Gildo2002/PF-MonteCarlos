@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case R.id.btn_breakdown_machine:
-                        intent = new Intent(mContext, BreakMachineActivity.class);
+                        intent = new Intent(mContext, BreakdownMachineActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.btn_inventory:

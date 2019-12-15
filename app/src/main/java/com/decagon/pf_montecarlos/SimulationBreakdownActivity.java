@@ -4,17 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class BreakMachineActivity extends AppCompatActivity {
+public class SimulationBreakdownActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_break_machine);
-
-        setupToolbar();
-    }
-
-    private void setupToolbar() {
-        setTitle(R.string.title_BreakdownMachine);
+        setContentView(R.layout.activity_simulation_breakdown);
     }
 }

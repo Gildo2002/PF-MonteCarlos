@@ -36,7 +36,6 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_gravity="center_horizontal"
-                android:ems="10"
                 android:hint="Formula"
                 android:imeOptions="actionNext"
                 android:inputType="none"
