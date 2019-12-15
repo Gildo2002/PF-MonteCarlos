@@ -34,28 +34,28 @@ public class BuffonNeedlesActivity extends AppCompatActivity {
                 String size = ((EditText) findViewById(R.id.et_sizeNeedles)).getText().toString();
                 String space = ((EditText) findViewById(R.id.et_spaceNeedles)).getText().toString();
                 String quantity = ((EditText) findViewById(R.id.et_quantityNeedles)).getText().toString();
-                switch (v.getId()){
-                    case(R.id.btn_accept):
-                        try {
-                            boolean trust =  (SimpleValidator.validate(SimpleValidator.NOT_EMPTY,
-                                    space)
-                                    && SimpleValidator.validate(SimpleValidator.NOT_EMPTY,
-                                    size)
-                                    && SimpleValidator.validate(SimpleValidator.NOT_EMPTY,
-                                    quantity)
-                                    && Integer.parseInt(space) > Integer.parseInt(size));
 
-                            if(trust)
-                                calculatePiEstimation();
-                            else
-                                Toast.makeText(mContext, "Error en los datos", Toast.LENGTH_SHORT).show();
+                if (v.getId() == R.id.btn_accept) {
+                    try {
+                        boolean trust = (SimpleValidator.validate(SimpleValidator.NOT_EMPTY,
+                                space)
+                                && SimpleValidator.validate(SimpleValidator.NOT_EMPTY,
+                                size)
+                                && SimpleValidator.validate(SimpleValidator.NOT_EMPTY,
+                                quantity)
+                                && Integer.parseInt(space) > Integer.parseInt(size));
 
-                            InputMethodManager imm = (InputMethodManager) getSystemService(mContext.INPUT_METHOD_SERVICE);
-                            imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
-                        }catch (Exception e){
-                            e.printStackTrace();
-                        }
-                        break;
+                        if (trust)
+                            calculatePiEstimation();
+                        else
+                            Toast.makeText(mContext, "Error en los datos", Toast.LENGTH_SHORT).show();
+
+                        InputMethodManager imm = (InputMethodManager) getSystemService(mContext.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         };

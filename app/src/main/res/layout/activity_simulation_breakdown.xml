@@ -57,6 +57,40 @@
                 android:textAlignment="inherit"
                 android:textSize="12sp" />
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_showSimulation"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="100dp"
+                android:text="Simular"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_span="2"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Tabla de valores"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TableLayout
+                android:id="@+id/tablelayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:shrinkColumns="*"
+                android:stretchColumns="*"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+
+            </TableLayout>
+
         </LinearLayout>
     </ScrollView>
 

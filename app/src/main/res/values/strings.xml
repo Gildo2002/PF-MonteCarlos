@@ -31,4 +31,14 @@
     <string name="breakdown_02">La simulación trata una cola, que serían las máquinas descompuesta y un servidor, que sería el mecánico. El mecánico puede reparar una maquina a la vez. Las maquinas se descompone cada cierto tiempo y este tiempo es estocásticos. Si cuando se daña una maquina y el mecánico está ocupado, la maquina pasara a cola. Mientras el mecánico no se encuentre reparando ninguna máquina, se mantendrá en estado ocioso y en espera de otro cliente.</string>
 
 
+    <string-array name="row_title_breakdown">
+        <item>T. falla      </item>
+        <item>T. reparacion </item>
+        <item>T. arrivo     </item>
+        <item>T. inicial    </item>
+        <item>T. final      </item>
+        <item>T. de espera  </item>
+        <item>T. de ocio    </item>
+    </string-array>
+
 </resources>
