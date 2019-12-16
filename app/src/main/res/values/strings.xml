@@ -30,6 +30,21 @@
     <string name="breakdown_01">Esta tabla tiene un conjuto de números al azar que se usaron para escoger los tiempos de descompostura y tiempos de reparación en proporción a las probabilidades de ocurrencia de las distribuciones originales.</string>
     <string name="breakdown_02">La simulación trata una cola, que serían las máquinas descompuesta y un servidor, que sería el mecánico. El mecánico puede reparar una maquina a la vez. Las maquinas se descompone cada cierto tiempo y este tiempo es estocásticos. Si cuando se daña una maquina y el mecánico está ocupado, la maquina pasara a cola. Mientras el mecánico no se encuentre reparando ninguna máquina, se mantendrá en estado ocioso y en espera de otro cliente.</string>
 
+    <string name="inventory_01">Con el propósito de analizar el comportamiento de un sistema de inventario, se describirá su comportamiento a través de modelos matemáticos y observaremos sus resultados con el siguiente ejemplo:</string>
+    <string name="inventory_02">Supongamos que la demanda diaria de un artículo particular puede expresarse mediante la distribución mostrada en la figura y que se desea generar un patrón de demanda para diez días. El primer paso es establecer la función de distribución acumulativa</string>
+    <string name="inventory_03">El siguiente paso es formar la tabla mostrada en la figura y asignar números índice. Los números índice se asignan de manera que puedan reflejar la probabilidad de diversas demandas.</string>
+    <string name="inventory_04">La demanda diaria de este ejemplo se mostró como un valor entero que comienza en 0 y termina en 5, los valores intermedios están en progresión aritmética.  El patrón de demanda para el período de 10 días mostrados en la figura</string>
+    <string name="inventory_05">En la figura nos muestra el patrón de demanda para 10 días, de acuerdo con los números aleatorios y a los números índice. se obtiene con los números aleatorios.</string>
+
+    <string name="function_01">Suponer que la función de efectividad de algún sistema se representa por:</string>
+    <string name="function_02">donde las variables X, Y y Z están descritas por las distribuciones de probabilidad mostradas en la figura</string>
+    <string name="function_03">El problema consiste en determinar, mediante la simulación, la distribución de la función de efectividad. La figura siguiente que nos muestra el número esperado de ocurrencias para los diferentes niveles de demanda en 10,000 ensayos.</string>
+    <string name="function_04">Los resultados de la figura siguiente se obtienen estableciendo las funciones de distribuciones acumuladas de cada variable y asignando números índices.</string>
+    <string name="function_05">Luego de tener los datos iniciales procedemos a la simulación de la ecuación, como lo muestra la figura ahora:</string>
+    <string name="function_06">Lo siguiente, graficamos el resultado de la simulación, esto se aprecia analizando la figura siguiente, en la cual se calcula el valor w para cada prueba utilizando los valores de x, y y z obtenidos a través de muestreo aleatorio. Esto se hace para n experimentos. </string>
+    <string name="function_07">Después de graficar los resultados de la Simulación para los valores w, se puede calcular la media y la desviación típica de w, ya que esta gráfica muestra supuestamente la distribución de probabilidad de w. </string>
+
+
 
     <string-array name="row_title_breakdown">
         <item>T. falla      </item>
@@ -39,6 +54,35 @@
         <item>T. final      </item>
         <item>T. de espera  </item>
         <item>T. de ocio    </item>
+    </string-array>
+
+    <string-array name="row_title_invetory">
+        <item>Demanda/Día    </item>
+        <item>Números Índices</item>
+    </string-array>
+    
+    <string-array name="row_title_function_01">
+        <item>Demanda/Semana</item>
+        <item>Frecuencia</item>
+    </string-array>
+
+    <string-array name="row_title_function_02">
+        <item>Valor X</item>
+        <item>N. Indice</item>
+        <item>Valor Y</item>
+        <item>N. Indice</item>
+        <item>Valor Z</item>
+        <item>N. Indice</item>
+    </string-array>
+
+    <string-array name="row_title_function_03">
+        <item>N.Prueba</item>
+        <item>Random X</item>
+        <item>X</item>
+        <item>Random Y</item>
+        <item>Y</item>
+        <item>Random Z</item>
+        <item>Z</item>
     </string-array>
 
 </resources>

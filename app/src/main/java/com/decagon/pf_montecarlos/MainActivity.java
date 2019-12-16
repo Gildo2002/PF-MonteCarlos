@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case R.id.btn_inventory:
-                        intent = new Intent(mContext,null);
+                        intent = new Intent(mContext,InventoryActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.btn_queue:
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case R.id.btn_function_effectiviness:
-                        intent = new Intent(mContext,null);
+                        intent = new Intent(mContext,FunctionEffectivinessActivity.class);
                         startActivity(intent);
                         break;
                 }

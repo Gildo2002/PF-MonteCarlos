@@ -49,6 +49,8 @@ public class Tabla {
             title.setTextSize(18);
             title.setGravity(Gravity.CENTER_HORIZONTAL);
             title.setTypeface(Typeface.DEFAULT_BOLD);
+            title.setTextColor(activity.getResources().getColor(R.color.white));
+            title.setBackground(ContextCompat.getDrawable(activity,R.drawable.rectangle_title));
             title.setLayoutParams(layoutParams);
             fila.addView(title);
         }
