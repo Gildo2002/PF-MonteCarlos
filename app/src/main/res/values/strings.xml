@@ -56,7 +56,7 @@
         <item>Demanda/Día    </item>
         <item>Números Índices</item>
     </string-array>
-    
+
     <string-array name="row_title_function_01">
         <item>Demanda/Semana</item>
         <item>Frecuencia</item>
