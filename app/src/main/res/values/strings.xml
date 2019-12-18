@@ -25,8 +25,6 @@
     <string name="tab_text_3">Metodo 3</string>
     <string name="tab_text_4">Metodo 4</string>
 
-    //Date
-
     <string name="breakdown_01">Esta tabla tiene un conjuto de números al azar que se usaron para escoger los tiempos de descompostura y tiempos de reparación en proporción a las probabilidades de ocurrencia de las distribuciones originales.</string>
     <string name="breakdown_02">La simulación trata una cola, que serían las máquinas descompuesta y un servidor, que sería el mecánico. El mecánico puede reparar una maquina a la vez. Las maquinas se descompone cada cierto tiempo y este tiempo es estocásticos. Si cuando se daña una maquina y el mecánico está ocupado, la maquina pasara a cola. Mientras el mecánico no se encuentre reparando ninguna máquina, se mantendrá en estado ocioso y en espera de otro cliente.</string>
 
@@ -43,8 +41,6 @@
     <string name="function_05">Luego de tener los datos iniciales procedemos a la simulación de la ecuación, como lo muestra la figura ahora:</string>
     <string name="function_06">Lo siguiente, graficamos el resultado de la simulación, esto se aprecia analizando la figura siguiente, en la cual se calcula el valor w para cada prueba utilizando los valores de x, y y z obtenidos a través de muestreo aleatorio. Esto se hace para n experimentos. </string>
     <string name="function_07">Después de graficar los resultados de la Simulación para los valores w, se puede calcular la media y la desviación típica de w, ya que esta gráfica muestra supuestamente la distribución de probabilidad de w. </string>
-
-
 
     <string-array name="row_title_breakdown">
         <item>T. falla      </item>
@@ -84,5 +80,8 @@
         <item>Random Z</item>
         <item>Z</item>
     </string-array>
+
+    <string name="action_settings">Configuraciones</string>
+    <string name="action_info">Informacion</string>
 
 </resources>
