@@ -51,10 +51,6 @@ public class MainActivity extends AppCompatActivity {
                         intent = new Intent(mContext,InventoryActivity.class);
                         startActivity(intent);
                         break;
-                    case R.id.btn_queue:
-                        intent = new Intent(mContext,null);
-                        startActivity(intent);
-                        break;
                     case R.id.btn_function_effectiviness:
                         intent = new Intent(mContext,FunctionEffectivinessActivity.class);
                         startActivity(intent);
@@ -69,28 +65,6 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_breakdown_machine).setOnClickListener(listener);
         findViewById(R.id.btn_inventory).setOnClickListener(listener);
         findViewById(R.id.btn_function_effectiviness).setOnClickListener(listener);
-        findViewById(R.id.btn_queue).setOnClickListener(listener);
-    }
-
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        int id = item.getItemId();
-
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        if(id == R.id.action_call){
-
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
 }
